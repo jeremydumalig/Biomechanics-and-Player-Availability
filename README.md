@@ -2,7 +2,7 @@
 
 <br>
 
-**Individual Project.R**
+**IP Script.R**
 * R script containing diff-in-diff regression model, visualizations
 
 **NBA Scraper.ipynb**

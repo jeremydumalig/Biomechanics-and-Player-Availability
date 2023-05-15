@@ -4,7 +4,7 @@ library(ggplot2)
 library(gt)
 rm(list = ls())
 
-setwd("/Users/jeremydumalig/Downloads/Individual Project")
+setwd("/Users/jeremydumalig/Documents/GitHub/Biomechanics-and-Player-Availability")
 
 raw_nba <- read_csv("nba_wearables.csv")
 
