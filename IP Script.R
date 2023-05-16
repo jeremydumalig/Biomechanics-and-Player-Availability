@@ -56,7 +56,7 @@ data.frame(summary(did_model)$coefficients) %>%
              subtitle = "Difference-in-Differences Estimation")
 
 # GGplot Custom Theme
-my_theme <-
+poster_theme <-
   theme_bw() +
   theme(
     plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"),
@@ -76,6 +76,29 @@ my_theme <-
     plot.caption = element_text(size=20),
     legend.title = element_text(size=28),
     legend.text = element_text(size=20),
+    legend.margin = margin(10, 10, 10, 10),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank())
+paper_theme <-
+  theme_bw() +
+  theme(
+    plot.margin = margin(1, 0.5, 0.5, 0.5, "cm"),
+    plot.background = element_rect(fill = "grey90",
+                                   color = "black"),
+    legend.box.background = element_rect(size=0.75),
+    axis.text.x = element_text(size=10),
+    axis.text.y = element_text(size=10),
+    axis.title.x = element_text(size=18,
+                                margin = margin(t=15, r=0, b=15, l=0)),
+    axis.title.y = element_text(size=18,
+                                margin = margin(t=0, r=15, b=0, l=15)),
+    plot.title = element_text(size=20,
+                              face="bold",
+                              margin = margin(t=15, r=0, b=15, l=0)),
+    plot.subtitle = element_text(size=14),
+    plot.caption = element_text(size=10),
+    legend.title = element_text(size=14),
+    legend.text = element_text(size=10),
     legend.margin = margin(10, 10, 10, 10),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank())
@@ -106,8 +129,7 @@ aggregate %>%
                color='black') +
   geom_line(size=2,
             show.legend=FALSE) +
-  geom_point(size=6,
-             show.legend=FALSE) +
+  geom_point(size=6) +
   scale_color_manual(values=c("maroon", "lightblue", "darkblue")) +
   scale_linetype_manual(values=c('solid', 'longdash', 'solid')) +
   ylim(c(61.5, 70.5)) +
@@ -116,12 +138,12 @@ aggregate %>%
        y="Average Games Played",
        color="Group") +
   guides(alpha="none") +
-  my_theme
+  # poster_theme
+  paper_theme
 
 # Parallel Trends Assumption
 nba %>%
-  filter(Player %in% c(unique(did_data$Player)),
-         Season <= 2013) %>%
+  filter(Season <= 2013) %>%
   mutate(tech = case_when(tech == 1 ~ "Treatment",
                           TRUE ~ "Control"),
          Season = case_when(Season == 2012 ~ "2012*",
@@ -150,4 +172,5 @@ nba %>%
        x="Season",
        y="Average Games Played",
        color="Group") +
-  my_theme
+  # poster_theme
+  paper_theme
