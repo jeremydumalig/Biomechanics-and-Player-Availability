@@ -1,5 +1,7 @@
 # Biomechanics and Player Availability in the NBA
 
+*This project was completed for DATA 25900 at the University of Chicago in May 2023.*
+
 <br>
 
 **IP Script.R**
