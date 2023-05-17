@@ -1,8 +1,6 @@
 # Biomechanics and Player Availability in the NBA
 
-*Jeremy Dumalig | jeremydumalig@uchicago.edu*
-<br>
-*University of Chicago | DATA 25900*
+*Jeremy Dumalig | jeremydumalig@uchicago.edu | University of Chicago | DATA 25900*
 
 <br>
 
