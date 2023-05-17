@@ -1,6 +1,6 @@
 # Biomechanics and Player Availability in the NBA
 
-*This project was completed for DATA 25900 at the University of Chicago in May 2023.*
+*Jeremy Dumalig | jeremydumalig@uchicago.edu | DATA 25900 | University of Chicago*
 
 <br>
 
